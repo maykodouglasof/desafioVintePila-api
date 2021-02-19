@@ -3,7 +3,6 @@ const UserModel = require("../model/UserModel");
 class UserController {
   async create(req, res) {
     const user = new UserModel(req.body);
-    console.log(user);
     await user
       .save()
       .then((response) => {
@@ -52,7 +51,7 @@ class UserController {
       if(response)
         return res.status(200).json(response);
       else
-        return res.status(404).json({error: 'tarefa não encontrada'});
+        return res.status(404).json({error: 'Usuário não encontrado'});
     })
     .catch(error => {
       return res.status(500).json(error);
