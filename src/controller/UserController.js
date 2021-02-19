@@ -15,7 +15,7 @@ class UserController {
   }
 
   async update(req, res) {
-    await User.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+    await UserModel.findByIdAndUpdate({ _id: req.params.id }, req.body, {
       new: true,
     })
       .then((response) => {
