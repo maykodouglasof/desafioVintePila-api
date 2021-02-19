@@ -5,7 +5,7 @@ server.use(cors());
 server.use(express.json());
 
 const UserRoutes = require('./routes/UserRoutes');
-server.use('/task', UserRoutes);
+server.use('/user', UserRoutes);
 
 server.listen(3333, () => {
   console.log('API ONLINE');
